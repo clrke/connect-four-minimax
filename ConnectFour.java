@@ -55,12 +55,12 @@ class Tree
 	
 	public Tree(Slot[][] slots, int depth)
 	{
-		this.value = 0;
 		this.slots = slots;
 		this.bestMoves = new ArrayList<Integer>();
 		this.depth = depth;
+		this.value = getValue();
 		
-		if(depth < maxDepth)
+		if(depth < maxDepth && this.value < 100 && this.value > -100 )
 		{
 			ArrayList<Integer> possibilities = new ArrayList<Integer>();
 			for(int i = 0; i < 7; i++)
@@ -160,11 +160,11 @@ class Tree
 				{
 					if(slots[i][j].piece == Piece.Red)
 					{
-						value += possibleConnections(i, j);
+						value += possibleConnections(i, j) * (maxDepth - this.depth);
 					}
 					else
 					{
-						value -= possibleConnections(i, j);
+						value -= possibleConnections(i, j) * (maxDepth - this.depth);
 					}
 				}
 			}
