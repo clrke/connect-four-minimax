@@ -5,7 +5,7 @@ Application of the Minimax Algorithm for an Intelligent Agent Playing the Connec
 
 ## To clone:
 ```
-git clone https://github.com/arkeidolon/connect-four-minimax
+git clone https://github.com/cl4rke/connect-four-minimax
 ```
 
 ## To compile
