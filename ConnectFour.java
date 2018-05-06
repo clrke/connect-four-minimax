@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.border.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
@@ -20,6 +21,8 @@ class Slot extends JButton
 		this.i = i;
 		this.j = j;
 		setOpaque(true);
+                setBorder(new LineBorder(Color.BLACK));
+                setBorderPainted(true);
 		setColor();
 	}
 	public void setPiece(Piece piece)
